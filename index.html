@@ -3,69 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Test Portfolio</title>
-    <title>Yogesh Dayal Dongare - Portfolio[cite: 1]</title>
+    <title>Yogesh Dayal Dongare - GIS Expert Portfolio[cite: 1]</title>
     <style>
-        /* CSS Variables for a Clean, Aesthetic, and Minimalist Theme */
+        /* Modern Colorful CSS Variables */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --background-color: #f8f9fa;
-            --text-color: #333333;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --primary-dark: #0f172a;
+            --primary-blue: #2563eb;
+            --gradient-start: #1e3a8a;
+            --gradient-end: #06b6d4;
+            --accent-orange: #f97316;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* Base Styles */
         body {
             font-family: var(--font-family);
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-light);
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 {
-            color: var(--primary-color);
-            font-weight: 600;
+        h1, h2, h3, h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
         }
 
         a {
             text-decoration: none;
-            color: var(--accent-color);
-            transition: color 0.3s ease;
+            color: var(--primary-blue);
+            transition: all 0.3s ease;
         }
 
-        a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Navigation */
+        /* Glassmorphism Navigation */
         nav {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
@@ -77,108 +79,204 @@
         }
 
         .nav-links a {
-            color: var(--secondary-color);
-            font-weight: 500;
+            color: var(--text-main);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
-        /* Layout */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 6rem 2rem 2rem;
+        .nav-links a:hover {
+            color: var(--primary-blue);
         }
 
-        section {
-            margin-bottom: 5rem;
-            padding: 3rem;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .section-title {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-            display: inline-block;
-        }
-
-        /* Hero Section */
+        /* Colorful Hero Section */
         .hero {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            padding: 10rem 2rem 6rem;
             text-align: center;
-            padding: 8rem 2rem 4rem;
-            background: transparent;
-            box-shadow: none;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 3rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -1px;
         }
 
         .hero h2 {
+            color: #cffafe;
             font-size: 1.8rem;
-            color: var(--accent-color);
             font-weight: 400;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Badges for Skills */
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #e0f2fe;
+        }
+
+        /* Container & Grid Layouts */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--accent-orange);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        /* Colorful Skill Badges */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
+            margin-bottom: 4rem;
         }
 
         .skill-badge {
-            background-color: var(--background-color);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border: 1px solid #e1e4e8;
-            transition: transform 0.2s ease;
+            background: white;
+            color: var(--primary-dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid var(--gradient-end);
+            transition: all 0.3s ease;
         }
 
         .skill-badge:hover {
-            transform: translateY(-2px);
-            background-color: var(--accent-color);
-            color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--accent-orange);
         }
 
-        /* Timelines/Cards for Experience & Projects */
-        .timeline-item {
-            margin-bottom: 2.5rem;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--accent-color);
+        /* Cards for Experience & Projects */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .timeline-item h3 {
-            margin: 0 0 0.5rem 0;
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--primary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .timeline-meta {
-            color: #7f8c8d;
-            font-size: 0.9rem;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card.project-card {
+            border-top-color: var(--accent-orange);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .meta {
+            color: var(--accent-orange);
+            font-weight: 600;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card .meta span {
+            color: var(--text-muted);
+            font-weight: 400;
             font-style: italic;
         }
 
-        /* Contact Section */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            font-size: 1.1rem;
+        .card ul {
+            padding-left: 1.2rem;
         }
 
-        /* Footer */
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-box h2 {
+            color: white;
+        }
+
+        .contact-box p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box a {
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .contact-box a:hover {
+            color: white;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .nav-links {
+                display: none; /* Can be replaced with a hamburger menu later */
+            }
         }
     </style>
 </head>
@@ -188,127 +286,141 @@
         <div class="nav-container">
             <div class="logo">YD.</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Vibrant Gradient Hero -->
+    <header class="hero" id="home">
+        <h1>Yogesh Dayal Dongare <sup style="font-size: 0.4em;">[cite: 1]</sup></h1>
+        <h2>GIS Analyst & Expert <sup style="font-size: 0.4em;">[cite: 1]</sup></h2>
+        <p>GIS Professional with 9+ years of hands-on experience in Maharashtra Land Records, MRSAC projects, Cadastral Mapping, and Web GIS Development. <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+    </header>
+
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h1>Yogesh Dayal Dongare <sup style="font-size: 0.4em;">[cite: 1]</sup></h1>
-            <h2>GIS Analyst/Expert <sup style="font-size: 0.4em;">[cite: 1]</sup></h2>
-            <p>GIS Professional with 9+ years experience of hands-on in Maharashtra Land Records, MRSAC projects, and Government GIS Projects. <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p>I am a GIS Professional with extensive experience in Cadastral Mapping, GIS Data Management, Spatial Analysis, GIS Quality Control (QC), Digitization, Georeferencing, and GPS Data Processing. <sup style="font-size: 0.8em;">[cite: 1]</sup> Currently, I am expanding my skill set by building hands-on expertise in Web GIS Development. <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
-            
-            <h3 style="margin-top: 2rem;">Education</h3>
-            <ul style="line-height: 1.8;">
-                <li><strong>UGC Sponsored One-Year Diploma in Geoinformatics</strong> - K.J. Somaiya College of Arts, Commerce & Science, Kopargaon (SPPU), 2024 <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                <li><strong>Certification in Basics of Geocomputation and Geoweb Services</strong> - Indian Institute of Remote Sensing (IIRS), ISRO, Department of Space, Government of India, 2020 <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                <li><strong>Bachelor of Engineering (B.E.) - Mechanical Engineering</strong> - Intellectual Institute of Management & Technology, 2014 <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-            </ul>
-        </section>
-
-        <!-- Skills Section -->
+        
+        <!-- Technical Skills -->
         <section id="skills">
-            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-header">
+                <h2>Technical Toolkit</h2>
+            </div>
             <div class="skills-grid">
-                <div class="skill-badge">ArcGIS Desktop <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">ArcGIS Pro <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">QGIS <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">AutoCAD <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">Google Earth Pro <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">ArcPy <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">SQL <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">HTML/CSS/JavaScript <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">Leaflet <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">GeoServer <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">PostgreSQL/PostGIS <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <div class="skill-badge">Python automation <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
+                <div class="skill-badge">ArcGIS Desktop & Pro <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">QGIS <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">AutoCAD <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">ArcPy & Python Automation <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">SQL / PostgreSQL / PostGIS <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">HTML / CSS / JavaScript <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">Leaflet & GeoServer <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
+                <div class="skill-badge">Google Earth Pro <sup style="font-size: 0.7em;">[cite: 1]</sup></div>
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- Professional Experience Grid -->
         <section id="experience">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="timeline-item">
-                <h3>GIS Expert <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <div class="timeline-meta">Maharashtra Land Records GIS Projects | Govt. of Maharashtra (Amravati) | 2024-2026 <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <ul>
-                    <li>Collected, cleaned, georeferenced and standardized GIS datasets. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                    <li>Executed GIS Quality Control (QC), topology correction and spatial analysis. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                    <li>Processed GPS survey data and supported GIS automation using Python (ArcPy). <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                </ul>
+            <div class="section-header">
+                <h2>Professional Experience</h2>
             </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>GIS Expert <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <div class="meta">
+                        Govt. of Maharashtra (Amravati) <sup style="font-size: 0.7em;">[cite: 1]</sup>
+                        <span>2024 - 2026 | Maharashtra Land Records GIS <sup style="font-size: 0.7em;">[cite: 1]</sup></span>
+                    </div>
+                    <ul>
+                        <li>Collected, cleaned, georeferenced, and standardized GIS datasets. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                        <li>Executed GIS Quality Control (QC), topology correction, and spatial analysis. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                        <li>Processed GPS survey data and supported GIS automation using Python (ArcPy). <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                    </ul>
+                </div>
 
-            <div class="timeline-item">
-                <h3>GIS Expert (Team Leader) <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <div class="timeline-meta">MRSAC Mahabhumi Base Map | Govt. of Maharashtra (Nagpur) | Jan 2020 - Dec 2024 <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <ul>
-                    <li>Led a team of GIS professionals for successful project completion. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                    <li>Digitized GIS features from orthorectified imagery for LULC, Transportation, Water Bodies, and Urban layers. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                    <li>Performed GIS QC including topology validation, overlap detection, and geometry correction. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                </ul>
-            </div>
+                <div class="card">
+                    <h3>GIS Expert (Team Leader) <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <div class="meta">
+                        MRSAC Mahabhumi Base Map (Nagpur) <sup style="font-size: 0.7em;">[cite: 1]</sup>
+                        <span>Jan 2020 - Dec 2024 <sup style="font-size: 0.7em;">[cite: 1]</sup></span>
+                    </div>
+                    <ul>
+                        <li>Led a team of GIS professionals in successful project planning and execution. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                        <li>Digitized GIS features from orthorectified imagery for LULC, Transportation, and Urban layers. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                        <li>Performed rigorous GIS QC, overlap detection, and geometry correction. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                    </ul>
+                </div>
 
-            <div class="timeline-item">
-                <h3>GIS Executive <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <div class="timeline-meta">Maharashtra Land Records | Govt. of Maharashtra (Nagpur) | Aug 2017 - Dec 2019 <sup style="font-size: 0.8em;">[cite: 1]</sup></div>
-                <ul>
-                    <li>Converted paper cadastral maps into accurate digital GIS/CAD maps. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                    <li>Performed parcel digitization in AutoCAD using standard layer structure. <sup style="font-size: 0.8em;">[cite: 1]</sup></li>
-                </ul>
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h3>GIS Executive <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <div class="meta">
+                        Maharashtra Land Records (Nagpur) <sup style="font-size: 0.7em;">[cite: 1]</sup>
+                        <span>Aug 2017 - Dec 2019 <sup style="font-size: 0.7em;">[cite: 1]</sup></span>
+                    </div>
+                    <ul>
+                        <li>Converted paper cadastral maps into accurate digital GIS/CAD maps. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                        <li>Performed parcel digitization in AutoCAD using standard layer structures and created cadastral features. <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Grid -->
         <section id="projects">
-            <h2 class="section-title">Key Projects</h2>
-            
-            <div class="timeline-item">
-                <h3>MahaSVAMITVA: Survey Information Management System <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <p>Handled orthorectification validation of drone-based village maps, parcel digitization, topology error detection, and quality verification of vendor deliverables. <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
+            <div class="section-header">
+                <h2>Key Projects</h2>
             </div>
-
-            <div class="timeline-item">
-                <h3>e-Mojni V2 Project <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <p>Provided technical support for the portal operations, validated DXF/CSV/Rover survey data, and resolved Tipan processing and GIS data validation issues. <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
+            <div class="grid-2">
+                <div class="card project-card">
+                    <h3>MahaSVAMITVA <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <p>Survey Information Management System: Handled orthorectification validation of drone-based village maps, parcel digitization, and topology error detection. <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+                </div>
+                <div class="card project-card">
+                    <h3>e-Mojni V2 Project <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <p>Provided technical support for portal operations, validated DXF/CSV survey data, and resolved Tipan processing and GIS data validation issues. <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+                </div>
+                <div class="card project-card">
+                    <h3>Pandan Raste <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <p>Supported the demarcation and restoration of government agricultural access roads, ensuring accurate spatial alignment of deliverables. <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+                </div>
+                <div class="card project-card">
+                    <h3>Raj COMP (Rajasthan) <sup style="font-size: 0.7em;">[cite: 1]</sup></h3>
+                    <p>Digitized features on satellite images for navigation, road networks, water bodies, and rail networks across Rajasthan state. <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+                </div>
             </div>
+        </section>
 
-            <div class="timeline-item">
-                <h3>Pandan Raste <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <p>Supported the demarcation and restoration of government agricultural access roads, ensuring accurate spatial alignment and quality of survey deliverables. <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
+        <!-- Education -->
+        <section id="education">
+            <div class="section-header">
+                <h2>Education & Certifications</h2>
             </div>
-
-            <div class="timeline-item">
-                <h3>Raj COMP (Rajasthan) <sup style="font-size: 0.6em;">[cite: 1]</sup></h3>
-                <p>Digitized features on satellite images for navigation, road networks, water bodies, and rail networks across Rajasthan state. <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
+            <div class="card" style="border-top-color: var(--gradient-end);">
+                <ul style="list-style-type: square; margin-left: 1rem; font-size: 1.1rem; line-height: 2;">
+                    <li><strong>Diploma in Geoinformatics (UGC Sponsored)</strong> - K.J. Somaiya College (SPPU), 2024 <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                    <li><strong>Geocomputation & Geoweb Services Certification</strong> - Indian Institute of Remote Sensing (IIRS), ISRO, 2020 <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                    <li><strong>Bachelor of Engineering (B.E.) - Mechanical</strong> - Intellectual Institute of Management & Technology, 2014 <sup style="font-size: 0.7em;">[cite: 1]</sup></li>
+                </ul>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:yogeshdongare87@gmail.com">yogeshdongare87@gmail.com</a> <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
-                <p><strong>Phone:</strong> 8600056708 <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
-                <p><strong>Location:</strong> Nagpur, Maharashtra, India <sup style="font-size: 0.8em;">[cite: 1]</sup></p>
+        <!-- Bold Contact Section -->
+        <section id="contact" class="contact-box">
+            <h2>Let's Connect</h2>
+            <p>Ready to bring 9+ years of GIS expertise to your team.</p>
+            <div style="margin-top: 2rem;">
+                <p>📧 <a href="mailto:yogeshdongare87@gmail.com">yogeshdongare87@gmail.com</a> <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+                <p>📱 +91 8600056708 <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
+                <p>📍 Nagpur, Maharashtra, India <sup style="font-size: 0.7em;">[cite: 1]</sup></p>
             </div>
         </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Yogesh Dayal Dongare. All rights reserved.</p>
+        <p>&copy; 2026 Yogesh Dayal Dongare. Designed for modern web.</p>
     </footer>
 
 </body>
